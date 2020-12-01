@@ -20,6 +20,6 @@ if (playerInput == '1') {
 } else if (playerInput == '3') {
   playerMove = 'nożyce';
 } else {
-  playerMove = 'nieznany ruch';
+  playerMove = 'kamień';
 }
 printMessage('Twój ruch: ' + playerMove);
