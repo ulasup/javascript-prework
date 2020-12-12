@@ -1,8 +1,6 @@
-let buttonRock,
-    buttonPaper,
-    buttonScissors,
-    playerScore=0,
-    computerScore=0;
+let buttonRock, buttonPaper, buttonScissors,
+playerScore=0,
+computerScore=0;
 
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
@@ -26,60 +24,49 @@ function buttonClicked(argButtonName) {
     }
   }
 
-  function endGame(){
-    playerScore=0;
-    document.getElementById('player').innerHTML = playerScore;
-    computerScore=0;
-    document.getElementById('computer').innerHTML = computerScore;
-  }
-
   function displayResult(argPlayerMove, argComputerMove) {
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-        playerScore++;
-        document.getElementById('player').innerHTML = playerScore;
-        if (playerScore == 3) {
-          printMessage('Koniec gry! Wygrałeś');
-          endGame();
-        }
-        else {
-          printMessage('Brawo! Zdobywasz punkt!');
-        }
+      playerScore++;
+      document.getElementById('player').innerHTML = playerScore;
+      if (playerScore == 3) {
+        printMessage('Koniec gry! Wygrałeś');
+      }
+      else {
+        printMessage('Brawo! Zdobywasz punkt!');
+      }
     }
     else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-        playerScore++;
-        document.getElementById('player').innerHTML = playerScore;
-        if (playerScore == 3) {
-          printMessage('Koniec gry! Wygrałeś');
-          endGame();
-        }
-        else {
-          printMessage('Brawo! Zdobywasz punkt!');
-        }
+      playerScore++;
+      document.getElementById('player').innerHTML = playerScore;
+      if (playerScore == 3) {
+        printMessage('Koniec gry! Wygrałeś');
+      }
+      else {
+        printMessage('Brawo! Zdobywasz punkt!');
+      }
     }
     else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-        playerScore++;
-        document.getElementById('player').innerHTML = playerScore;
-        if (playerScore == 3) {
-          printMessage('Koniec gry! Wygrałeś');
-          endGame();
-        }
-        else {
-          printMessage('Brawo! Zdobywasz punkt!');
-        }
+      playerScore++;
+      document.getElementById('player').innerHTML = playerScore;
+      if (playerScore == 3) {
+        printMessage('Koniec gry! Wygrałeś');
+      }
+      else {
+        printMessage('Brawo! Zdobywasz punkt!');
+      }
     }
     else if (argPlayerMove == argComputerMove) {
-        printMessage('Remis!');
+      printMessage('Remis!');
     }
     else {
-        computerScore++;
-        document.getElementById('computer').innerHTML = computerScore;
-        if (computerScore == 3) {
-          printMessage('Koniec gry! Przegrałeś :(');
-          endGame();
-        }
-        else {
-          printMessage('Komputer zdobywa punkt!');
-        }
+      computerScore++;
+      document.getElementById('computer').innerHTML = computerScore;
+      if (computerScore == 3) {
+        printMessage('Koniec gry! Przegrałeś :(');
+      }
+      else {
+        printMessage('Komputer zdobywa punkt!');
+      }
     }
     printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
   }

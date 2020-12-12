@@ -26,20 +26,12 @@ function buttonClicked(argButtonName) {
     }
   }
 
-  function endGame(){
-    playerScore=0;
-    document.getElementById('player').innerHTML = playerScore;
-    computerScore=0;
-    document.getElementById('computer').innerHTML = computerScore;
-  }
-
   function displayResult(argPlayerMove, argComputerMove) {
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
         playerScore++;
         document.getElementById('player').innerHTML = playerScore;
         if (playerScore == 3) {
           printMessage('Koniec gry! Wygrałeś');
-          endGame();
         }
         else {
           printMessage('Brawo! Zdobywasz punkt!');
@@ -50,7 +42,6 @@ function buttonClicked(argButtonName) {
         document.getElementById('player').innerHTML = playerScore;
         if (playerScore == 3) {
           printMessage('Koniec gry! Wygrałeś');
-          endGame();
         }
         else {
           printMessage('Brawo! Zdobywasz punkt!');
@@ -61,7 +52,6 @@ function buttonClicked(argButtonName) {
         document.getElementById('player').innerHTML = playerScore;
         if (playerScore == 3) {
           printMessage('Koniec gry! Wygrałeś');
-          endGame();
         }
         else {
           printMessage('Brawo! Zdobywasz punkt!');
@@ -75,7 +65,6 @@ function buttonClicked(argButtonName) {
         document.getElementById('computer').innerHTML = computerScore;
         if (computerScore == 3) {
           printMessage('Koniec gry! Przegrałeś :(');
-          endGame();
         }
         else {
           printMessage('Komputer zdobywa punkt!');

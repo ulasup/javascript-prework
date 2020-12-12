@@ -1,0 +1,22 @@
+body {
+  margin: 12px auto;
+  text-align: center;
+}
+
+.header {
+  min-height: 100px;
+}
+
+.row {
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.score {
+  min-height: 100px;
+  color: green;
+  font-size: 36px;
+  -ms-flex-align: center;
+      align-items: center;
+}
+/*# sourceMappingURL=style.css.map */

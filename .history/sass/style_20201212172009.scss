@@ -3,14 +3,15 @@ body {
     text-align: center;
 }
 .header {
-    min-height: 100px;
+    min-height: 200px;
 }
 .row {
     justify-content: center;
 }
-.score {
+.player, .computer, .score {
     min-height: 100px;
     color: green;
     font-size: 36px;
+    border: 1px solid black;
     align-items: center;
 }
