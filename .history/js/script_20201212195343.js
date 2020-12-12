@@ -8,6 +8,8 @@ let playerScore=0,
 function buttonClicked(argButtonName) {
   clearMessages();
 
+  let computerMove, playerMove, randomNumber;
+
   function getMoveName(argMoveId) {
     if (argMoveId == 1) {
       return 'kamień';
@@ -32,17 +34,35 @@ function buttonClicked(argButtonName) {
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
         playerScore++;
         document.getElementById('player').innerHTML = playerScore;
-        printMessage('Brawo! Zdobywasz punkt!');
+        if (playerScore == 3) {
+          printMessage('Koniec gry! Wygrałeś');
+          endGame();
+        }
+        else {
+          printMessage('Brawo! Zdobywasz punkt!');
+        }
     }
     else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
         playerScore++;
         document.getElementById('player').innerHTML = playerScore;
-        printMessage('Brawo! Zdobywasz punkt!');
+        if (playerScore == 3) {
+          printMessage('Koniec gry! Wygrałeś');
+          endGame();
+        }
+        else {
+          printMessage('Brawo! Zdobywasz punkt!');
+        }
     }
     else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
         playerScore++;
         document.getElementById('player').innerHTML = playerScore;
-        printMessage('Brawo! Zdobywasz punkt!');
+        if (playerScore == 3) {
+          printMessage('Koniec gry! Wygrałeś');
+          endGame();
+        }
+        else {
+          printMessage('Brawo! Zdobywasz punkt!');
+        }
     }
     else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
@@ -50,24 +70,20 @@ function buttonClicked(argButtonName) {
     else {
         computerScore++;
         document.getElementById('computer').innerHTML = computerScore;
-        printMessage('Komputer zdobywa punkt!');
+        if (computerScore == 3) {
+          printMessage('Koniec gry! Przegrałeś :(');
+          endGame();
+        }
+        else {
+          printMessage('Komputer zdobywa punkt!');
+        }
     }
-
     printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
-
-    if (playerScore == 3) {
-      printMessage('KONIEC GRY! WYGRAŁEŚ!');
-      endGame();
-    }
-    else if (computerScore == 3) {
-      printMessage('KONIEC GRY! PRZEGRAŁEŚ :(');
-      endGame();
-    }
   }
 
-  const playerMove = argButtonName,
-        randomNumber = Math.floor(Math.random() * 3 + 1),
-        computerMove = getMoveName(randomNumber);
+  playerMove = argButtonName;
+  randomNumber = Math.floor(Math.random() * 3 + 1);
+  computerMove = getMoveName(randomNumber);
   displayResult(playerMove, computerMove);
 }
 

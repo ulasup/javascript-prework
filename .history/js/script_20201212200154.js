@@ -56,11 +56,13 @@ function buttonClicked(argButtonName) {
     printMessage('Komputer zagrał ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
     if (playerScore == 3) {
-      printMessage('KONIEC GRY! WYGRAŁEŚ!');
+      printMessage ('')
+      printMessage('Koniec gry! Wygrałeś!');
       endGame();
     }
     else if (computerScore == 3) {
-      printMessage('KONIEC GRY! PRZEGRAŁEŚ :(');
+      printMessage ('')
+      printMessage('Koniec gry! Przegrałeś :(');
       endGame();
     }
   }
